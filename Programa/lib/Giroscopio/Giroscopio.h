@@ -17,7 +17,7 @@
 class Giroscopio : public Task
 {
 public:
-Giroscopio(Mensagem *newMensagem);
+    Giroscopio(Mensagem *newMensagem);
     void setMensagem(Mensagem *newMensagem);
 
 protected:

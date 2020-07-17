@@ -9,6 +9,7 @@
 class UltrassomMediana : public Task
 {
 public:
+    UltrassomMediana(Mensagem *newMensagem);
     void setMensagem(Mensagem *newMensagem);
 
 protected:

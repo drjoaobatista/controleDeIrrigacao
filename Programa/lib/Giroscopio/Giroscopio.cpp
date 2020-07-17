@@ -4,22 +4,24 @@ Giroscopio::Giroscopio(Mensagem *newMensagem)
 {
     mensagem = newMensagem;
 }
+
 void Giroscopio::setMensagem(Mensagem *newMensagem)
 {
     mensagem = newMensagem;
 }
+
 void Giroscopio::setup()
 {
-    Wire.begin(pinSda, pinScl); // D2 4 (GPIO4)=SDA / D1(GPIO5)=SCL
+  /*  Wire.begin(pinSda, pinScl); // D2 4 (GPIO4)=SDA / D1(GPIO5)=SCL
     Wire.beginTransmission(MPU);
     Wire.write(0x6B);
     Wire.write(0);
-    Wire.endTransmission(true);
+    Wire.endTransmission(true);*/
 }
 
 void Giroscopio::loop()
 {
-    lerValores();
+  //  lerValores();
     delay(10000);
 }
 

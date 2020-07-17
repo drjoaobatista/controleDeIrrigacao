@@ -19,16 +19,12 @@
 Mensagem mensagem; // struct de troca de mensagens entre as tasK
 SoundGui soundGuiTask(&mensagem);
 BlinkGui blinkGuiTask(&mensagem);
-UltrassomMediana ultrassomMedianaTask; //Alan
-
+UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 EnviarFirebase enviarFirebaseTask(&mensagem);
-//ConectaWifi conectaWifiTask(&mensagem);
+//ConectaWifi conectaWifiTask(&mensagem); // erro no enviar no firebase
 GetDataTime getDataTimeTask(&mensagem);
+Giroscopio giroscopioTask(&mensagem);
 
-//Giroscopio giroscopioTask(&mensagem);
-
-//#include <EnviarFirebase2.h>
-//EnviarFirebase2 enviarFirebaseTask;
 void setup()
 {
   //configurações
@@ -42,22 +38,16 @@ void setup()
   mensagem.wifiCont = 3;
   mensagem.timeZone = -3; // zona de tempo do brasil é -3*/
 
-  // blinkGuiTask.setMensagem(&mensagem);
-  //soundGuiTask.setMensagem(&mensagem);
-  //ultrassomMedianaTask.setMensagem(&mensagem);*/
-  //conectaWifiTask.setMensagem(&mensagem);
-  //getDataTimeTask.setMensagem(&mensagem);
-  //enviarFirebaseTask.setMensagem(&mensagem);
-  //giroscopioTask.setMensagem(&mensagem);
-
+  //setup's
   Scheduler.start(&soundGuiTask);
   Scheduler.start(&blinkGuiTask);
-  //Scheduler.start(&ultrassomMedianaTask);
+  Scheduler.start(&ultrassomMedianaTask);
   Scheduler.start(&enviarFirebaseTask);
-  //Scheduler.start(&conectaWifiTask);
+  //Scheduler.start(&conectaWifiTask); // erro
   Scheduler.start(&getDataTimeTask);
+  Scheduler.start(&giroscopioTask);
 
-  // Scheduler.start(&giroscopioTask);
+  //loop's
   Scheduler.begin();
 }
 

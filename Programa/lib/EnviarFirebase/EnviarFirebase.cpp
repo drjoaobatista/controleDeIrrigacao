@@ -74,6 +74,8 @@ void EnviarFirebase::setup()
     Firebase.setReadTimeout(firebaseData, 1000 * 60);
     //Size and its write timeout e.g. tiny (1s), small (10s), medium (30s) and large (60s).
     Firebase.setwriteSizeLimit(firebaseData, "tiny");
+    Firebase.pushString(firebaseData, path + "/Dispositivos", mensagem->nome);
+    path=path+"/"+mensagem->nome;
     enviar("mac", mensagem->mac);
     enviar("ip", mensagem->ip);
     enviar("nome", mensagem->nome);
@@ -89,4 +91,5 @@ void EnviarFirebase::loop()
     enviar("data", mensagem->data);
     enviar("volume", mensagem->volume);
     enviar("dados/" + mensagem->dataTime, mensagem->volume);
+    //ESP.deepSleep (300e6, WAKE_RF_DEFAULT); // colocar para dormi
 }

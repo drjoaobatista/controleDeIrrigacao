@@ -1,10 +1,16 @@
 // Instituto Federal de Sergipe - Campus São Cristóvão
 // Pesquisa 2019-2 Medição do nível d'água em reservatórios;
 #include <UltrassomMediana.h>
+UltrassomMediana::UltrassomMediana(Mensagem *newMensagem)
+{
+    mensagem = newMensagem;
+}
+
 void UltrassomMediana::setMensagem(Mensagem *newMensagem)
 {
     mensagem = newMensagem;
 }
+
 void UltrassomMediana::setup()
 {
     pinMode(echoPin, INPUT);  // define o pino 5 como entrada (recebe)
@@ -24,15 +30,12 @@ void UltrassomMediana::loop()
     long distCentral = medianaDistancias(24);
     Serial.print("O valor central medido foi: ");
     Serial.println(distCentral);
-    mensagem->volume=distCentral; //criar função que calcula volume
-    
-
-
-    delay(10000); //espera 1 segundo para fazer a leitura novamente
+    mensagem->volume = distCentral; //criar função que calcula volume
+    delay(10000);                   //espera 1 segundo para fazer a leitura novamente
 }
 
 /*
- * Função que mede a distância em centímetros 
+ * Função que mede a distância em centímetros
  * utilizando a técnica da mediana
  */
 long UltrassomMediana::medianaDistancias(int qtAmostras)
