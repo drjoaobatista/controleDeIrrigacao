@@ -46,7 +46,6 @@ void setup()
   //Scheduler.start(&conectaWifiTask); // erro
   Scheduler.start(&getDataTimeTask);
   Scheduler.start(&giroscopioTask);
-
   //loop's
   Scheduler.begin();
 }
