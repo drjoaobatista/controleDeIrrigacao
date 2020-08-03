@@ -21,12 +21,18 @@ SoundGui soundGuiTask(&mensagem);
 BlinkGui blinkGuiTask(&mensagem);
 UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 EnviarFirebase enviarFirebaseTask(&mensagem);
-//ConectaWifi conectaWifiTask(&mensagem); // erro no enviar no firebase
+//ConectaWifi conectaWifiTask(&mensagem); // erro no enviar no firebase 
 GetDataTime getDataTimeTask(&mensagem);
 Giroscopio giroscopioTask(&mensagem);
 
 void setup()
-{
+{ // TODO ler e gravar dados no file sistem:  se iniciando agora ler incrementa o numero de inicializações e em seguida 
+// grava de volta a mensagem. modifica a varialvel iniciando para false.
+// se a variavel false ativada verifica a variavel ateração se hove alteração grava a mensagem. modifica depois a 
+// variavel aletracao para false.
+// se ouver erro para gravar tentar depois. 
+// gravar um arquivo de log e disponibilizar por wifi, enviar para o firebase quando pedido. 
+
   //configurações
   Serial.begin(115200);
   mensagem.wifiSsid[0] = "jb1";
