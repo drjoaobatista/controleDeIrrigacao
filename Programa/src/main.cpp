@@ -21,7 +21,7 @@ SoundGui soundGuiTask(&mensagem);
 BlinkGui blinkGuiTask(&mensagem);
 UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 EnviarFirebase enviarFirebaseTask(&mensagem);
-//ConectaWifi conectaWifiTask(&mensagem); // erro no enviar no firebase
+//ConectaWifi conectaWifiTask(&mensagem); // erro no enviar no firebase 
 GetDataTime getDataTimeTask(&mensagem);
 Giroscopio giroscopioTask(&mensagem);
 
