@@ -20,6 +20,8 @@ struct Mensagem
   bool fomatar = false;
   bool time = false;
   bool erro = false;
+  bool iniciandoAgora = true;
+  bool modificacao = false ;
   String mac;
   String ip;
   String nome = "none";
@@ -33,7 +35,7 @@ struct Mensagem
   int timeZone=-3;
   unsigned long tempoAtualizar = 24 * 60 * 60 * 1000;
   int cod = 1;
-
+  
 };
 
 #endif
