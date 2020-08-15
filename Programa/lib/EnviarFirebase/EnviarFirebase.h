@@ -7,7 +7,7 @@
 #include <Mensagem.h>
 #include <ArduinoJson.h>
 #define FIREBASE_HOST "pibic-43c92.firebaseio.com"
-#define FIREBASE_AUTH "XsbVOsAdrorLm60qJuZeQpI2ddCQjqtbTW5Xnntf"
+#define FIREBASE_AUTH "XsbVOsAdrorLm60qJuZeQpI2ddCQjqtbTW5Xnntf" //#TODO Mascará informação
 class EnviarFirebase : public Task
 {
 public:
