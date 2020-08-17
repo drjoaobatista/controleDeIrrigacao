@@ -74,11 +74,10 @@ void EnviarFirebase::setup()
     Firebase.setReadTimeout(firebaseData, 1000 * 60);
     //Size and its write timeout e.g. tiny (1s), small (10s), medium (30s) and large (60s).
     Firebase.setwriteSizeLimit(firebaseData, "tiny");
-    Firebase.pushString(firebaseData, path + "/Dispositivos", mensagem->nome);
+    //Firebase.pushString(firebaseData, path + "/Dispositivos", mensagem->nome);
     path=path+"/"+mensagem->nome;
     enviar("mac", mensagem->mac);
     enviar("ip", mensagem->ip);
-    enviar("nome", mensagem->nome);
     enviar("timeInicial", mensagem->dataTimeInicial);
     enviar("hora", mensagem->hora);
     enviar("data", mensagem->data);
