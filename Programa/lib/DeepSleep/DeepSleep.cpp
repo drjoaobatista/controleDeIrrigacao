@@ -20,8 +20,9 @@ void DeepSleep::loop()
     if (mensagem->sleep)
     { 
         Serial.println("slep...");
-        //ESP.deepSleep(mensagem->sleepTime);//Dorme por 1 Minuto (Deep-Sleep em Micro segundos).
-        ESP.deepSleep(5*60*1000);
+        delay(mensagem->sleepTime);
+        //ESP.deepSleep(mensagem->sleepTime);//Dorme por 1 Minuto (Deep-Sleep em Micro segundos). #FIXME necessário mudar o Scheduler
+        //ESP.deepSleep(5*60*1000);
     }
     
 }
