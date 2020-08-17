@@ -26,7 +26,7 @@ void EnviarFirebase::setupWiFi()
             if (r == 0)
             {
                 cont3 = cont3 + 1;
-                //depois de n tentativas abrir sistema para configuração de wifi e salvar no disco
+                //TODO depois de n tentativas abrir sistema para configuração de wifi e salvar no disco
             }
         }
         Serial.print(".");
@@ -65,16 +65,10 @@ void EnviarFirebase::enviar(String tag, String dado)
 void EnviarFirebase::setup()
 {
     setupWiFi();
-    while (!mensagem->wifi)
-    {
-        delay(1000);
-    }
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
     Firebase.reconnectWiFi(true);
     Firebase.setReadTimeout(firebaseData, 1000 * 60);
-    //Size and its write timeout e.g. tiny (1s), small (10s), medium (30s) and large (60s).
     Firebase.setwriteSizeLimit(firebaseData, "tiny");
-    //Firebase.pushString(firebaseData, path + "/Dispositivos", mensagem->nome);
     path=path+"/"+mensagem->nome;
     enviar("mac", mensagem->mac);
     enviar("ip", mensagem->ip);

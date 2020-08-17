@@ -7,11 +7,11 @@
 #include <Scheduler.h>
 #include <UltrassomMediana.h>
 
-Mensagem mensagem; // struct de troca de mensagens entre as tasK
+Mensagem mensagem; // struct de configuração e troca de mensagens entre as tasK
 BlinkGui blinkGuiTask(&mensagem);
 EnviarFirebase enviarFirebaseTask(&mensagem);
-GetDataTime getDataTimeTask(&mensagem);
 DeepSleep deepSleep(&mensagem);
+GetDataTime getDataTimeTask(&mensagem);
 UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 
 void setup()

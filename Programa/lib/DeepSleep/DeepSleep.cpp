@@ -18,8 +18,10 @@ void DeepSleep::setup()
 void DeepSleep::loop()
 {
     if (mensagem->sleep)
-    {
-         ESP.deepSleep(mensagem->sleepTime);//Dorme por 1 Minuto (Deep-Sleep em Micro segundos).
+    { 
+        Serial.println("slep...");
+        //ESP.deepSleep(mensagem->sleepTime);//Dorme por 1 Minuto (Deep-Sleep em Micro segundos).
+        ESP.deepSleep(5*60*1000);
     }
     
 }
