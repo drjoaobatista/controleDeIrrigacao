@@ -18,8 +18,8 @@ protected:
 
 private:
     Mensagem *mensagem;
-    int echoPin = D7;
-    int trigPin = D8;
+    int echoPin;
+    int trigPin;
     long medianaDistancias(int qtAmostras);
     long medirDistancia(int echoPin, int trigPin);
 };

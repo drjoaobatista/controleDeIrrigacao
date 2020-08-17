@@ -13,6 +13,8 @@ void UltrassomMediana::setMensagem(Mensagem *newMensagem)
 
 void UltrassomMediana::setup()
 {
+    echoPin=mensagem->echoPin;
+    trigPin=mensagem->trigPin;
     pinMode(echoPin, INPUT);  // define o pino 5 como entrada (recebe)
     pinMode(trigPin, OUTPUT); // define o pino 3 como saida (envia)
 }

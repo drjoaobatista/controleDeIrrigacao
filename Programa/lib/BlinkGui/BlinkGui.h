@@ -3,7 +3,7 @@
 
 #include <Scheduler.h>
 #include <Mensagem.h>
-
+//TODO usar código Morse?
 class BlinkGui : public Task
 {
 public:
@@ -15,8 +15,8 @@ protected:
     void loop();
 
 private:
-    int pinLedEsp = D4;
-    int pinLedMcu = D0;
+    int pinLedEsp;
+    int pinLedMcu;
 
     uint8_t stateMcu = HIGH;
     uint8_t stateEsp = HIGH;

@@ -9,6 +9,8 @@ void BlinkGui::setMensagem(Mensagem *newMensagem)
 }
 void BlinkGui::setup()
 {
+    pinLedEsp=mensagem->pinLedEsp;
+    pinLedMcu=mensagem->pinLedMcu;
     pinMode(pinLedEsp, OUTPUT);
     pinMode(pinLedMcu, OUTPUT);
 }

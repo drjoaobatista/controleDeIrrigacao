@@ -12,14 +12,18 @@ struct Mensagem
   int pinSda=D2;
   int pinBuzz = D3;
   int pinLedEsp = D4; //fixo
-  int pinLedMcu = D0; //fixo
+  int pinLedMcu = D5; //fixo
+  // d0 = ledMCU = deepsleep
   int echoPin = D7;
   int trigPin = D8;
+  int sleepTime = 60000;
 
   bool wifi = false;
   bool fomatar = false;
   bool time = false;
   bool erro = false;
+  bool sleep= false;
+  
   String mac;
   String ip;
   String nome = "none";

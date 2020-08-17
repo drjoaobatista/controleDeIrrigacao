@@ -90,5 +90,5 @@ void EnviarFirebase::loop()
     enviar("data", mensagem->data);
     enviar("volume", mensagem->volume);
     enviar("dados/" + mensagem->dataTime, mensagem->volume);
-    //ESP.deepSleep (300e6, WAKE_RF_DEFAULT); // colocar para dormi
+    mensagem->sleep = true;
 }

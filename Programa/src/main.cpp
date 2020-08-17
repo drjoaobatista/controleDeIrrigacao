@@ -1,17 +1,18 @@
 #include <Arduino.h>
 #include <BlinkGui.h>
-#include <UltrassomMediana.h>
+#include <DeepSleep.h>
 #include <EnviarFirebase.h>
 #include <GetDataTime.h>
 #include <Mensagem.h>
 #include <Scheduler.h>
+#include <UltrassomMediana.h>
 
 Mensagem mensagem; // struct de troca de mensagens entre as tasK
 BlinkGui blinkGuiTask(&mensagem);
-UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 EnviarFirebase enviarFirebaseTask(&mensagem);
 GetDataTime getDataTimeTask(&mensagem);
-
+DeepSleep deepSleep(&mensagem);
+UltrassomMediana ultrassomMedianaTask(&mensagem); //Alan
 
 void setup()
 {
@@ -26,6 +27,7 @@ void setup()
   Scheduler.start(&ultrassomMedianaTask);
   Scheduler.start(&enviarFirebaseTask);
   Scheduler.start(&getDataTimeTask);
+  Scheduler.start(&deepSleep);
   //loop's
   Scheduler.begin();
 }
